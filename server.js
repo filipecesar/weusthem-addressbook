@@ -11,9 +11,14 @@ const exphbs = require("express-handlebars");
 app.use(bodyParser.urlencoded({ extended: true}));
 
 app.use(function(req,res,next){
-    let route
-})
+    let route = req.baseUrl + req.path;
+    app.locals.activeRoute = (route == "/") ? "/" : route.replace(/\/$/, ""); 
+    next();
+});
 
+function onHttpStart(){
+    console.log("Express HTTP server listening on " + HTTP_PORT);
+}
 
 app.use((req, res) => {
     res.status(404).send("Page Not Found");
