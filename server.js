@@ -5,8 +5,14 @@ const bodyParser = require('body-parser');
 var path = require("path");
 var HTTP_PORT = process.env.PORT || 8080;
 var data = require("./data-service.js");
+const fs = require('fs');
+const exphbs = require("express-handlebars");
 
 app.use(bodyParser.urlencoded({ extended: true}));
+
+app.use(function(req,res,next){
+    let route
+})
 
 
 app.use((req, res) => {
