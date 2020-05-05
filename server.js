@@ -13,8 +13,8 @@ app.use((req, res) => {
     res.status(404).send("Page Not Found");
 });
 
-data.initilize()
-    .them(function() {
+data.initialize()
+    .then(function() {
         app.listen(HTTP_PORT, onHttpStart);
     })
     .catch(function(){
