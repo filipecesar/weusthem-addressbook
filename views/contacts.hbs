@@ -1,0 +1,34 @@
+<div class="row">
+    <div class="col-md-12">
+        <h2>Contacts <a href="/contacts/add" class="btn btn-success pull-right">Add New Contact</a></h2> <hr />
+        <div class="table-responsive">
+            <table class="table">
+                {{#if contacts}}
+
+                <thead>
+                    <th>Contact Num</th>
+                    <th>Full Name</th>
+                    <th>Email</th>
+                    <th>Phone Num</th>
+                </thead>
+                <tbody> 
+                    {{#each contacts}}
+                    <tr>
+                        <td> {{contactNum}} </td> 
+                        <td> <a href="/contact/{{this.contactNum}}"> {{firstName}} {{lastName}} </a> </td> 
+                        <td> <a href="mailto:{{this.email}}"> {{email}} </a> </td>
+                        <td> {{phoneNumber}} </td>
+                        <td> <a href="/contact/delete/{{this.contactNum}}" class="btn btn-danger">remove</a> </td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+                {{/if}}
+            </table>
+        </div>
+    </div> 
+        {{#unless contacts}}
+            <div class="col-md-12">
+                <strong>{{message}}</strong>
+            </div>
+        {{/unless}}
+</div>

@@ -1,0 +1,63 @@
+<div class="row">
+    <div class="col-md-12">
+        <h2>{{viewData.contact.firstName}} {{viewData.contact.lastName}} - contact: {{viewData.contact.contactNum}}</h2> <hr />
+   
+        <form method="post" action="/contact/update"> <fieldset>
+            <legend>Personal Information</legend> <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="firstName">First Name:</label>
+                        <input class="form-control" id="firstName" name="firstName" type="text" value="{{viewData.contact.firstName}}" />
+                    </div> 
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="lastName">Last Name:</label>
+                        <input class="form-control" id="lastName" name="lastName" type="text" value="{{viewData.contact.lastName}}" />
+                    </div> 
+                </div>
+            </div>
+            <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="email">Email:</label>
+                            <input class="form-control" id="email" name="email" type="email" value="{{viewData.contact.email}}" />
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input class="form-control" id="contactNum" name="contactNum" type="hidden" value="{{viewData.contact.contactNum}}" />
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="phoneNumber">Phone Number:</label>
+                            <input class="form-control" id="phoneNumber" name="phoneNumber", readonly type="text"  value="{{viewData.contact.phoneNumber}}" />
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+
+            <fieldset>
+<div class="row">
+    <div class="col-md-12">
+        <h2>Images <a href="/images/add" class="btn btn-success pull-right">Add New Image</a></h2>
+        <hr /> 
+    </div>
+    <div class="col-md-4">
+        {{#each data}}
+        <img src="./public/images/uploaded/{{this}}" class="img-responsive img-thumbnail" />
+        {{else}}
+            <div class="col-md-12 text-center"> 
+                <strong>No Images Available</strong>
+            </div>
+        {{/each}}
+    </div>
+</div>
+        </fieldset>
+
+            <hr />
+            <input type="submit" class="btn btn-primary pull-right" value="Update Contact" /><br /><br /><br />
+        </form> 
+    </div>
+</div>

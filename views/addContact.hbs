@@ -1,0 +1,71 @@
+        <div class="row">
+            <div class="col-md-12">
+        
+                <h2>Add Contact</h2>
+    
+                    <br />
+            
+                    <form method="post" action="/contacts/add">
+            
+                        <fieldset>
+                            <legend>Contact Details</legend>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="firstName">First Name:</label>
+                                        <input class="form-control" id="firstName" name="firstName" type="text" />
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="last_name">Last Name:</label>
+                                        <input class="form-control" id="lastName" name="lastName" type="text"  />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="email">Email:</label>
+                                        <input class="form-control" id="email" name="email" type="email" />
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="phoneNumber">Phone Number</label>
+                                        <input class="form-control" id="phoneNumber" name="phoneNumber" type="text"  />
+                                    </div>
+                                </div>
+                            </div>
+            
+                        </fieldset>
+            
+                        <fieldset>
+      <div class="row">
+            <div class="col-md-12">
+                <h2>Add Image</h2>
+                    <br />
+                    <form method="post" action="/images/add" enctype="multipart/form-data">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="firstName">Image File:</label>
+                                    <input class="form-control" id="imageFile" name="imageFile" type="file" />
+                                </div>
+                            </div>
+                        </div>
+                        <hr />
+                        <input type="submit" class="btn btn-primary pull-right" value="Add Image" /><br /><br /><br />
+                    </form>
+            </div>
+        </div>
+            
+                        </fieldset>
+            
+                        <hr />
+            
+                        <input type="submit" class="btn btn-primary pull-right" value="Add Contact" /><br /><br /><br />
+            
+                    </form>
+            </div>
+        </div>
